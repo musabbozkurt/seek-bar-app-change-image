@@ -1,4 +1,4 @@
-package com.example.obozkurt.myapplication;
+package com.example.mb.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,12 +8,11 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    SeekBar seekBar;
-    TextView textView;
-    ImageView imageView;
+    private TextView textView;
+    private ImageView imageView;
 
     int progress = 0;
-    int[] image= new int[]{
+    int[] image = new int[]{
             R.drawable.sagittal_boyun_1, R.drawable.sagittal_boyun_2, R.drawable.sagittal_boyun_3, R.drawable.sagittal_boyun_4,
             R.drawable.sagittal_boyun_5, R.drawable.sagittal_boyun_6, R.drawable.sagittal_boyun_7, R.drawable.sagittal_boyun_8,
             R.drawable.sagittal_boyun_9, R.drawable.sagittal_boyun_10, R.drawable.sagittal_boyun_11,
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
         textView = (TextView) findViewById(R.id.textView);
         imageView = (ImageView) findViewById(R.id.imageView);
 
@@ -33,15 +32,14 @@ public class MainActivity extends AppCompatActivity {
         seekBar.setMax(10);
         seekBar.setProgress(progress);
 
-        textView.setText(""+progress);
+        textView.setText("" + progress);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 progress = i;
-                textView.setText(""+progress);
+                textView.setText("" + progress);
                 imageView.setImageResource(image[progress]);
-
             }
 
             @Override

@@ -1,4 +1,4 @@
-package com.example.obozkurt.myapplication;
+package com.example.mb.myapplication;
 
 import org.junit.Test;
 
